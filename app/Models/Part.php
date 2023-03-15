@@ -38,11 +38,7 @@ class Part extends Model
         }
 
         $query .= " ORDER BY name";
-        $cars = DB::select($query, $bindings);
-        $page = $request->input('page', 1);
-        $offset = ($page * self::PERPAGE) - self::PERPAGE;
-        return new LengthAwarePaginator(array_slice($cars, $offset, self::PERPAGE, true),
-            count($cars), self::PERPAGE, $page, ['path' => $request->url(), 'query' => $request->query()]);
+        return DB::select($query, $bindings);
 
     }
 

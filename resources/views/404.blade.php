@@ -1,7 +1,2 @@
-@extends("app")
-
-@section("content")
-    <main>
-        Neni take
-    </main>
-@endsection
+<h1>404</h1>
+<h2>Page not found</h2>
